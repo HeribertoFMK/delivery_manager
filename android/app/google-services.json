@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "298055092830",
+    "project_id": "delivery-manager-man",
+    "storage_bucket": "delivery-manager-man.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298055092830:android:11a27a7a2c386f5d1102cf",
+        "android_client_info": {
+          "package_name": "com.hfmarketing.deliverymanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-Ap-bir86yp1tYwaiptPdLSSG4CwUwFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

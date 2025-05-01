@@ -1,4 +1,4 @@
-package com.example.delivery_manager
+package com.hfmarketing.delivery_manager
 
 import io.flutter.embedding.android.FlutterActivity
 
