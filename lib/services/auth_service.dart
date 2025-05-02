@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -18,29 +19,27 @@ class AuthService {
   }
 
   // Login com Google
-  Future<User?> loginWithGoogle() async {
+  Future<void> loginWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      if (googleUser == null) return null; // Cancelado pelo usuário
+      if (kIsWeb) {
+        // Web login
+        GoogleAuthProvider googleProvider = GoogleAuthProvider();
+        await _auth.signInWithPopup(googleProvider);
+      } else {
+        // Mobile login
+        final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser!.authentication;
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+        final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
 
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-
-      final userCredential = await _auth.signInWithCredential(credential);
-      return userCredential.user;
-    } on FirebaseAuthException catch (e) {
-      throw Exception(e.message ?? 'Erro no login com Google.');
+        await _auth.signInWithCredential(credential);
+      }
+    } catch (e) {
+      rethrow;
     }
-  }
-
-  // Logout
-  Future<void> logout() async {
-    await GoogleSignIn().signOut();
-    await _auth.signOut();
   }
 }

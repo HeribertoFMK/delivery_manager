@@ -41,12 +41,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAQ2XdPM-sZvtM1ZvppmYIk_3dY6_rRr5g',
-    appId: '1:298055092830:web:e5ebe2e8814f6ee51102cf',
-    messagingSenderId: '298055092830',
-    projectId: 'delivery-manager-man',
-    authDomain: 'delivery-manager-man.firebaseapp.com',
-    storageBucket: 'delivery-manager-man.firebasestorage.app',
+  apiKey: "AIzaSyAQ2XdPM-sZvtM1ZvppmYIk_3dY6_rRr5g",
+  authDomain: "delivery-manager-man.firebaseapp.com",
+  projectId: "delivery-manager-man",
+  storageBucket: "delivery-manager-man.firebasestorage.app",
+  messagingSenderId: "298055092830",
+  appId: "1:298055092830:web:554bc3e20d6a9a181102cf",
   );
 
   static const FirebaseOptions android = FirebaseOptions(
