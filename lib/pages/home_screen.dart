@@ -24,30 +24,32 @@ class HomeScreen extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          if (constraints.maxWidth > 600) {
-            // Layout para telas maiores (tablet ou web)
-            return Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.delivery_dining, size: 64),
-                  const SizedBox(width: 32),
-                  const Text(
-                    'Bem-vindo ao Delivery Manager!',
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ],
-              ),
-            );
-          } else {
-            // Layout para celular
-            return const Center(
-              child: Text(
+          final isWide = constraints.maxWidth > 600;
+
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.delivery_dining, size: isWide ? 64 : 48),
+              const SizedBox(height: 20),
+              Text(
                 'Bem-vindo ao Delivery Manager!',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: isWide ? 24 : 18),
               ),
-            );
-          }
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/add_delivery');
+                },
+                child: const Text('Nova Entrega'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/earnings');
+                },
+                child: const Text('Ver Ganhos'),
+              ),
+            ],
+          );
         },
       ),
     );

@@ -1,36 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:logger/logger.dart';
+
+// Importações de serviços e telas
+import 'firebase_options.dart';
 import 'services/auth_service.dart';
 import 'pages/login_screen.dart';
-import 'pages/register_screen.dart';
 import 'pages/home_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:delivery_manager/utils/logger.dart'; // Ajuste para o caminho correto
-import 'firebase_options.dart'; // Certifique-se que este arquivo existe!
+import 'pages/earnings_screen.dart';
+import 'pages/add_delivery_screen.dart';
+
+// Logger global
+final logger = Logger();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   try {
-    // Altere esta linha para incluir as options
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform, // ← Esta é a chave!
-    );
-    runApp(
-      ChangeNotifierProvider(
-        create: (_) => AuthService(),
-        child: const DeliveryManagerApp(),
-      ),
+      options: DefaultFirebaseOptions.currentPlatform,
     );
   } catch (e) {
-    logger.e("Erro crítico: $e");
-    runApp(
-      const MaterialApp(
-        home: Scaffold(
-          body: Center(child: Text('Erro ao inicializar o Firebase')),
-        ),
-      ),
-    );
+    logger.e("Erro ao inicializar Firebase: $e");
   }
+
+  runApp(const DeliveryManagerApp());
 }
 
 class DeliveryManagerApp extends StatelessWidget {
@@ -38,16 +33,20 @@ class DeliveryManagerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Delivery Manager',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Roboto', primarySwatch: Colors.blue),
-      initialRoute: '/login',
-      routes: {
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegisterScreen(),
-        '/home': (context) => const HomeScreen(),
-      },
+    return MultiProvider(
+      providers: [Provider<AuthService>(create: (_) => AuthService())],
+      child: MaterialApp(
+        title: 'Delivery Manager',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
+        initialRoute: '/login',
+        routes: {
+          '/login': (context) => const LoginScreen(),
+          '/home': (context) => const HomeScreen(),
+          '/earnings': (context) => const EarningsScreen(),
+          '/add_delivery': (context) => const AddDeliveryScreen(),
+        },
+      ),
     );
   }
 }
