@@ -41,6 +41,7 @@ class DeliveryManagerApp extends StatelessWidget {
     return MaterialApp(
       title: 'Delivery Manager',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Roboto', primarySwatch: Colors.blue),
       initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginScreen(),

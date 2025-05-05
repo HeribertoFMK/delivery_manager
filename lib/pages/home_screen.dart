@@ -22,7 +22,34 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(child: Text('Bem-vindo ao Delivery Manager!')),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 600) {
+            // Layout para telas maiores (tablet ou web)
+            return Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.delivery_dining, size: 64),
+                  const SizedBox(width: 32),
+                  const Text(
+                    'Bem-vindo ao Delivery Manager!',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ],
+              ),
+            );
+          } else {
+            // Layout para celular
+            return const Center(
+              child: Text(
+                'Bem-vindo ao Delivery Manager!',
+                style: TextStyle(fontSize: 18),
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }

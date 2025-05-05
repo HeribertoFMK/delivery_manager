@@ -24,57 +24,69 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthService>(context, listen: false);
-
     return Scaffold(
-      appBar: AppBar(title: const Text('Criar Conta')),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            TextField(
-              controller: _email,
-              decoration: const InputDecoration(labelText: 'Email'),
+      appBar: AppBar(title: const Text('Login')),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextField(
+                      controller: _email,
+                      decoration: const InputDecoration(labelText: 'Email'),
+                    ),
+                    const SizedBox(height: 16),
+                    TextField(
+                      controller: _password,
+                      decoration: const InputDecoration(labelText: 'Senha'),
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      onPressed: () async {
+                        final auth = Provider.of<AuthService>(
+                          context,
+                          listen: false,
+                        );
+                        await auth.login(_email.text, _password.text);
+                        if (!mounted) return;
+                        if (auth.isLoggedIn) {
+                          // Ignora o lint APENAS nesta linha, após verificar mounted
+                          // ignore: use_build_context_synchronously
+                          Navigator.pushReplacementNamed(context, '/home');
+                        }
+                      },
+                      child: const Text('Entrar'),
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton.icon(
+                      icon: const Icon(Icons.login),
+                      label: const Text('Entrar com Google'),
+                      onPressed: () async {
+                        final auth = Provider.of<AuthService>(
+                          context,
+                          listen: false,
+                        );
+                        await auth.loginWithGoogle();
+                        if (!mounted) return;
+                        if (auth.isLoggedIn) {
+                          // Ignora o lint APENAS nesta linha, após verificar mounted
+                          // ignore: use_build_context_synchronously
+                          Navigator.pushReplacementNamed(context, '/home');
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
-            TextField(
-              controller: _password,
-              decoration: const InputDecoration(labelText: 'Senha'),
-              obscureText: true,
-            ),
-            TextField(
-              controller: _confirmPassword,
-              decoration: const InputDecoration(labelText: 'Confirmar Senha'),
-              obscureText: true,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                if (_password.text != _confirmPassword.text) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('As senhas não coincidem')),
-                  );
-                  return;
-                }
-
-                await auth.register(_email.text, _password.text);
-                if (!mounted) return;
-
-                if (auth.isLoggedIn) {
-                  // Ignora o lint APENAS nesta linha
-                  // ignore: use_build_context_synchronously
-                  Navigator.pushReplacementNamed(context, '/home');
-                } else {
-                  // Ignora o lint APENAS nesta linha
-                  // ignore: use_build_context_synchronously
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Erro ao registrar')),
-                  );
-                }
-              },
-              child: const Text('Registrar'),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
