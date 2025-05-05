@@ -1,20 +1,38 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter/foundation.dart';
 
-class AuthService {
+class AuthService extends ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // Login com email e senha
-  Future<User?> loginWithEmail(String email, String password) async {
+  User? get currentUser => _auth.currentUser;
+  bool get isLoggedIn => FirebaseAuth.instance.currentUser != null;
+
+  // Registrar com e-mail e senha
+  Future<void> register(String email, String password) async {
     try {
-      final credential = await _auth.signInWithEmailAndPassword(
+      await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return credential.user;
-    } on FirebaseAuthException catch (e) {
-      throw Exception(e.message ?? 'Erro ao fazer login.');
+      notifyListeners();
+    } catch (e) {
+      debugPrint('Erro ao registrar: $e');
+      rethrow;
+    }
+  }
+
+  // Login com e-mail e senha
+  Future<void> login(String email, String password) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      notifyListeners(); // ← Fundamental para atualizar a UI
+    } catch (e) {
+      debugPrint("Erro no login: $e");
+      rethrow;
     }
   }
 
@@ -26,7 +44,6 @@ class AuthService {
         GoogleAuthProvider googleProvider = GoogleAuthProvider();
         await _auth.signInWithPopup(googleProvider);
       } else {
-        // Mobile login
         final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
         final GoogleSignInAuthentication googleAuth =
             await googleUser!.authentication;
@@ -41,5 +58,12 @@ class AuthService {
     } catch (e) {
       rethrow;
     }
+  }
+
+  // Logout
+  Future<void> logout() async {
+    await FirebaseAuth.instance.signOut();
+    await GoogleSignIn().signOut();
+    notifyListeners();
   }
 }
