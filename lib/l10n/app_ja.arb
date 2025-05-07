@@ -1,0 +1,47 @@
+{
+  "@@locale": "ja",
+  "appTitle": "配送マネージャー",
+  "@appTitle": {
+    "description": "アプリのタイトル"
+  },
+  "welcomeMessage": "ようこそ！",
+  "@welcomeMessage": {
+    "description": "ユーザーへの歓迎メッセージ"
+  },
+  "login": "ログイン",
+  "@login": {
+    "description": "ログインボタンのテキスト"
+  },
+  "logout": "ログアウト",
+  "@logout": {
+    "description": "ログアウトボタンのテキスト"
+  },
+  "home": "ホーム",
+  "@home": {
+    "description": "ホーム画面のナビゲーションラベル"
+  },
+  "earnings": "収益",
+  "@earnings": {
+    "description": "ユーザーの収益を表示するページまたはセクション"
+  },
+  "addDelivery": "配達を追加",
+  "@addDelivery": {
+    "description": "新しい配達を追加するボタン"
+  },
+  "settings": "設定",
+  "@settings": {
+    "description": "アプリの設定ページ"
+  },
+  "language": "言語",
+  "@language": {
+    "description": "アプリの言語を選択するオプション"
+  },
+  "currency": "通貨",
+  "@currency": {
+    "description": "通貨を選択するオプション"
+  },
+  "autoDetectCurrency": "現在地に基づいて通貨を自動検出",
+  "@autoDetectCurrency": {
+    "description": "通貨の自動検出オプションのラベル"
+  }
+}

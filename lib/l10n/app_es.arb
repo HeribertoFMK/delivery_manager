@@ -1,0 +1,47 @@
+{
+  "@@locale": "es",
+  "appTitle": "Administrador de Entregas",
+  "@appTitle": {
+    "description": "Título de la aplicación"
+  },
+  "welcomeMessage": "¡Bienvenido!",
+  "@welcomeMessage": {
+    "description": "Mensaje de bienvenida para el usuario"
+  },
+  "login": "Iniciar sesión",
+  "@login": {
+    "description": "Texto para el botón de inicio de sesión"
+  },
+  "logout": "Cerrar sesión",
+  "@logout": {
+    "description": "Texto para el botón de cerrar sesión"
+  },
+  "home": "Inicio",
+  "@home": {
+    "description": "Etiqueta de navegación para la pantalla de inicio"
+  },
+  "earnings": "Ganancias",
+  "@earnings": {
+    "description": "Página o sección que muestra las ganancias del usuario"
+  },
+  "addDelivery": "Agregar Entrega",
+  "@addDelivery": {
+    "description": "Botón para agregar una nueva entrega"
+  },
+  "settings": "Configuraciones",
+  "@settings": {
+    "description": "Página de configuraciones de la aplicación"
+  },
+  "language": "Idioma",
+  "@language": {
+    "description": "Opción para seleccionar el idioma de la aplicación"
+  },
+  "currency": "Moneda",
+  "@currency": {
+    "description": "Opción para seleccionar la moneda"
+  },
+  "autoDetectCurrency": "Detectar moneda automáticamente según tu ubicación",
+  "@autoDetectCurrency": {
+    "description": "Etiqueta para la opción de detección automática de moneda"
+  }
+}

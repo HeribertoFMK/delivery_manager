@@ -1,0 +1,47 @@
+{
+  "@@locale": "de",
+  "appTitle": "Liefermanager",
+  "@appTitle": {
+    "description": "Der Titel der App"
+  },
+  "welcomeMessage": "Willkommen!",
+  "@welcomeMessage": {
+    "description": "Begrüßungsnachricht für den Benutzer"
+  },
+  "login": "Anmelden",
+  "@login": {
+    "description": "Text für die Login-Schaltfläche"
+  },
+  "logout": "Abmelden",
+  "@logout": {
+    "description": "Text für die Logout-Schaltfläche"
+  },
+  "home": "Startseite",
+  "@home": {
+    "description": "Navigationsname für die Startseite"
+  },
+  "earnings": "Einnahmen",
+  "@earnings": {
+    "description": "Seite oder Abschnitt mit Benutzereinnahmen"
+  },
+  "addDelivery": "Lieferung hinzufügen",
+  "@addDelivery": {
+    "description": "Schaltfläche zum Hinzufügen einer neuen Lieferung"
+  },
+  "settings": "Einstellungen",
+  "@settings": {
+    "description": "Seite mit App-Einstellungen"
+  },
+  "language": "Sprache",
+  "@language": {
+    "description": "Option zum Auswählen der App-Sprache"
+  },
+  "currency": "Währung",
+  "@currency": {
+    "description": "Option zum Auswählen der Währung"
+  },
+  "autoDetectCurrency": "Währung basierend auf Ihrem Standort automatisch erkennen",
+  "@autoDetectCurrency": {
+    "description": "Beschriftung für die automatische Währungserkennungsoption"
+  }
+}

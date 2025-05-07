@@ -1,0 +1,47 @@
+{
+  "@@locale": "ko",
+  "appTitle": "딜리버리 매니저",
+  "@appTitle": {
+    "description": "앱의 제목"
+  },
+  "welcomeMessage": "환영합니다!",
+  "@welcomeMessage": {
+    "description": "사용자 환영 메시지"
+  },
+  "login": "로그인",
+  "@login": {
+    "description": "로그인 버튼의 텍스트"
+  },
+  "logout": "로그아웃",
+  "@logout": {
+    "description": "로그아웃 버튼의 텍스트"
+  },
+  "home": "홈",
+  "@home": {
+    "description": "홈 화면 네비게이션 이름"
+  },
+  "earnings": "수익",
+  "@earnings": {
+    "description": "사용자의 수익을 보여주는 페이지 또는 섹션"
+  },
+  "addDelivery": "배송 추가",
+  "@addDelivery": {
+    "description": "새 배송을 추가하는 버튼"
+  },
+  "settings": "설정",
+  "@settings": {
+    "description": "앱 설정 페이지"
+  },
+  "language": "언어",
+  "@language": {
+    "description": "앱 언어를 선택하는 옵션"
+  },
+  "currency": "통화",
+  "@currency": {
+    "description": "통화를 선택하는 옵션"
+  },
+  "autoDetectCurrency": "위치에 따라 통화 자동 감지",
+  "@autoDetectCurrency": {
+    "description": "통화를 자동으로 감지하는 옵션의 설명"
+  }
+}

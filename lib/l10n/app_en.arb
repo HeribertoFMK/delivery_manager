@@ -1,0 +1,47 @@
+{
+  "@@locale": "en",
+  "appTitle": "Delivery Manager",
+  "@appTitle": {
+    "description": "The title of the app"
+  },
+  "welcomeMessage": "Welcome!",
+  "@welcomeMessage": {
+    "description": "Welcome message for the user"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Text for the login button"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Text for the logout button"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Navigation label for the home screen"
+  },
+  "earnings": "Earnings",
+  "@earnings": {
+    "description": "Page or section showing user earnings"
+  },
+  "addDelivery": "Add Delivery",
+  "@addDelivery": {
+    "description": "Button to add a new delivery"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "App settings page"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Option to select the app language"
+  },
+  "currency": "Currency",
+  "@currency": {
+    "description": "Option to select the currency"
+  },
+  "autoDetectCurrency": "Auto-detect currency based on your location",
+  "@autoDetectCurrency": {
+    "description": "Label for auto currency detection option"
+  }
+}

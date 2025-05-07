@@ -1,0 +1,47 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Gestionnaire de Livraisons",
+  "@appTitle": {
+    "description": "Titre de l'application"
+  },
+  "welcomeMessage": "Bienvenue!",
+  "@welcomeMessage": {
+    "description": "Message de bienvenue pour l'utilisateur"
+  },
+  "login": "Connexion",
+  "@login": {
+    "description": "Texte pour le bouton de connexion"
+  },
+  "logout": "Déconnexion",
+  "@logout": {
+    "description": "Texte pour le bouton de déconnexion"
+  },
+  "home": "Accueil",
+  "@home": {
+    "description": "Étiquette de navigation pour l'écran d'accueil"
+  },
+  "earnings": "Gains",
+  "@earnings": {
+    "description": "Page ou section affichant les gains de l'utilisateur"
+  },
+  "addDelivery": "Ajouter une Livraison",
+  "@addDelivery": {
+    "description": "Bouton pour ajouter une nouvelle livraison"
+  },
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Page des paramètres de l'application"
+  },
+  "language": "Langue",
+  "@language": {
+    "description": "Option pour sélectionner la langue de l'application"
+  },
+  "currency": "Devise",
+  "@currency": {
+    "description": "Option pour sélectionner la devise"
+  },
+  "autoDetectCurrency": "Détecter automatiquement la devise en fonction de votre position",
+  "@autoDetectCurrency": {
+    "description": "Étiquette pour l'option de détection automatique de la devise"
+  }
+}

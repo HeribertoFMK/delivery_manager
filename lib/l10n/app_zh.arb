@@ -1,0 +1,47 @@
+{
+  "@@locale": "zh",
+  "appTitle": "配送管理器",
+  "@appTitle": {
+    "description": "应用程序的标题"
+  },
+  "welcomeMessage": "欢迎！",
+  "@welcomeMessage": {
+    "description": "用户欢迎消息"
+  },
+  "login": "登录",
+  "@login": {
+    "description": "登录按钮的文本"
+  },
+  "logout": "登出",
+  "@logout": {
+    "description": "登出按钮的文本"
+  },
+  "home": "首页",
+  "@home": {
+    "description": "主页导航标签"
+  },
+  "earnings": "收入",
+  "@earnings": {
+    "description": "显示用户收入的页面或部分"
+  },
+  "addDelivery": "添加配送",
+  "@addDelivery": {
+    "description": "添加新配送的按钮"
+  },
+  "settings": "设置",
+  "@settings": {
+    "description": "应用设置页面"
+  },
+  "language": "语言",
+  "@language": {
+    "description": "选择应用语言的选项"
+  },
+  "currency": "货币",
+  "@currency": {
+    "description": "选择货币的选项"
+  },
+  "autoDetectCurrency": "根据您的位置自动检测货币",
+  "@autoDetectCurrency": {
+    "description": "自动检测货币的标签"
+  }
+}
